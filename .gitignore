@@ -1,0 +1,19 @@
+target
+bak
+.classpath
+.idea
+.idea.xml
+.idea google-
+venv/
+*.class
+*.bak
+*.iml
+*.ipr
+*.iws
+tree.log
+logs
+all.log
+error.log
+info.log
+.m2
+*.log
