@@ -126,8 +126,7 @@ if __name__ == '__main__':
                 print(orders_df.head())
             elif number == 2:
                 print("处理业务逻辑 2: 配送订单资源分配给您的配送服务管理的位置。")
-                fulfillment_orders_df = read_assigned_fulfillment_orders.orders_to_dataframe()
-                print(fulfillment_orders_df.head())
+
                 # Example data to create a new fulfillment order
                 fulfillment_order_data = {
                     'order_id': 123456789,
@@ -144,11 +143,12 @@ if __name__ == '__main__':
                     fulfillment_order_data)
 
                 print(created_fulfillment_order)
+
+                fulfillment_orders_df = read_assigned_fulfillment_orders.orders_to_dataframe()
+                print(fulfillment_orders_df.head())
+
             elif number == 3:
                 print("处理业务逻辑 3: 结账处理。")
-                checkouts_df = read_checkouts.checkouts_to_dataframe()
-
-                print(checkouts_df.head())
 
                 checkout_data = {
                     'line_items': [
@@ -173,10 +173,13 @@ if __name__ == '__main__':
 
                 created_checkout = write_checkouts.create_checkout(checkout_data)
                 print(created_checkout)
+
+                checkouts_df = read_checkouts.checkouts_to_dataframe()
+
+                print(checkouts_df.head())
+
             elif number == 4:
                 print("处理业务逻辑 4: 客户和保存的搜索管理。")
-                customers_df = read_customers.customers_to_dataframe()
-                print(customers_df.head())
 
                 # Example data to create a new customer
                 customer_data = {
@@ -209,11 +212,13 @@ if __name__ == '__main__':
                 updated_customer = write_customers.update_customer(customer_id, updated_customer_data)
                 print('Updated Customer:', updated_customer)
 
+                customers_df = read_customers.customers_to_dataframe()
+                print(customers_df.head())
+
+
+
             elif number == 5:
                 print("处理业务逻辑 5: GraphQL 管理 API 折扣功能。")
-
-                discounts_df = read_discounts.discounts_to_dataframe()
-                print(discounts_df.head())
 
                 # Example data to create a new discount
                 discount_data = {
@@ -238,10 +243,13 @@ if __name__ == '__main__':
                 updated_discount = write_discounts.update_discount(discount_id, updated_discount_data)
                 print('Updated Discount:', updated_discount)
 
+                discounts_df = read_discounts.discounts_to_dataframe()
+                print(discounts_df.head())
+
+
+
             elif number == 6:
                 print("处理业务逻辑 6: 履行服务管理。")
-                fulfillments_df = read_fulfillments.fulfillments_to_dataframe()
-                print(fulfillments_df.head())
 
                 # Example data to create a new fulfillment
                 fulfillment_data = {
@@ -271,11 +279,12 @@ if __name__ == '__main__':
                 updated_fulfillment = write_fulfillments.update_fulfillment(fulfillment_id, updated_fulfillment_data)
                 print('Updated Fulfillment:', updated_fulfillment)
 
+                fulfillments_df = read_fulfillments.fulfillments_to_dataframe()
+                print(fulfillments_df.head())
+
+
             elif number == 7:
                 print("处理业务逻辑 7: 库存水平和库存物料管理。")
-
-                inventory_df = read_inventory.inventory_to_dataframe()
-                print(inventory_df.head())
 
                 # Example data to create a new inventory level
                 inventory_level_data = {
@@ -298,6 +307,10 @@ if __name__ == '__main__':
                 updated_inventory_level = write_inventory.update_inventory_level(inventory_level_id,
                                                                                  updated_inventory_level_data)
                 print('Updated Inventory Level:', updated_inventory_level)
+
+                inventory_df = read_inventory.inventory_to_dataframe()
+                print(inventory_df.head())
+
             elif number == 8:
                 print("处理业务逻辑 8: 管理 API 商店政策。")
                 legal_policies_df = read_legal_policies.legal_policies_to_dataframe()
@@ -335,8 +348,6 @@ if __name__ == '__main__':
                 print(locations_df.head())
             elif number == 11:
                 print("处理业务逻辑 11: 营销活动管理。")
-                marketing_events_df = read_marketing_events.marketing_events_to_dataframe()
-                print(marketing_events_df.head())
 
                 # Example data to create a new marketing event
                 marketing_event_data = {
@@ -360,14 +371,17 @@ if __name__ == '__main__':
                 updated_marketing_event = write_marketing_events.update_marketing_event(marketing_event_id,
                                                                                         updated_marketing_event_data)
                 print('Updated Marketing Event:', updated_marketing_event)
+
+                marketing_events_df = read_marketing_events.marketing_events_to_dataframe()
+                print(marketing_events_df.head())
+
+
             elif number == 12:
                 print("处理业务逻辑 12: 商户审批信号。")
                 signals_df = read_merchant_approval_signals.merchant_approval_signals_to_dataframe()
                 print(signals_df.head())
             elif number == 13:
                 print("处理业务逻辑 13: 放弃的结账、客户、履行、订单和交易资源。")
-                orders_df = read_orders.orders_to_dataframe()
-                print(orders_df.head())
 
                 # Example data to create a new order
                 order_data = {
@@ -411,6 +425,10 @@ if __name__ == '__main__':
 
                 updated_order = write_orders.update_order(order_id, updated_order_data)
                 print('Updated Order:', updated_order)
+
+                orders_df = read_orders.orders_to_dataframe()
+                print(orders_df.head())
+
             elif number == 14:
                 print("处理业务逻辑 14: 付款授权管理。")
 
@@ -441,8 +459,6 @@ if __name__ == '__main__':
                 print('Updated Payment Mandate:', updated_mandate)
             elif number == 15:
                 print("处理业务逻辑 15: 价格规则管理。")
-                price_rules_df = read_price_rules.price_rules_to_dataframe()
-                print(price_rules_df.head())
 
                 # Example data to create a new price rule
                 price_rule_data = {
@@ -469,10 +485,12 @@ if __name__ == '__main__':
 
                 updated_price_rule = write_price_rules.update_price_rule(price_rule_id, updated_price_rule_data)
                 print('Updated Price Rule:', updated_price_rule)
+
+                price_rules_df = read_price_rules.price_rules_to_dataframe()
+                print(price_rules_df.head())
+
             elif number == 16:
                 print("处理业务逻辑 16: 产品、产品多属性、产品图片、收藏、自定义产品系列和智能产品系列管理。")
-                products_df = read_products.products_to_dataframe()
-                print(products_df.head())
 
                 # Example data to create a new product
                 product_data = {
@@ -502,15 +520,15 @@ if __name__ == '__main__':
                 updated_product = write_products.update_product(product_id, updated_product_data)
                 print('Updated Product:', updated_product)
 
+                products_df = read_products.products_to_dataframe()
+                print(products_df.head())
+
             elif number == 17:
                 print("处理业务逻辑 17: 产品列表和产品系列列表。")
                 product_listings_df = read_product_listings.product_listings_to_dataframe()
                 print(product_listings_df.head())
             elif number == 18:
                 print("处理业务逻辑 18: 产品发布和产品系列发布。")
-
-                publications_df = read_publications.publications_to_dataframe()
-                print(publications_df.head())
 
                 # Example data to create a new publication
                 publication_data = {
@@ -532,12 +550,12 @@ if __name__ == '__main__':
 
                 updated_publication = write_publications.update_publication(publication_id, updated_publication_data)
                 print('Updated Publication:', updated_publication)
+
+                publications_df = read_publications.publications_to_dataframe()
+                print(publications_df.head())
+
             elif number == 19:
                 print("处理业务逻辑 19: 销售计划管理。")
-
-                purchase_options_df = read_purchase_options.purchase_options_to_dataframe()
-
-                print(purchase_options_df.head())
 
                 # Example data to create a new purchase option
                 purchase_option_data = {
@@ -561,6 +579,12 @@ if __name__ == '__main__':
                 updated_purchase_option = write_purchase_options.update_purchase_option(purchase_option_id,
                                                                                         updated_purchase_option_data)
                 print('Updated Purchase Option:', updated_purchase_option)
+
+                purchase_options_df = read_purchase_options.purchase_options_to_dataframe()
+
+                print(purchase_options_df.head())
+
+
 
             elif number == 20:
                 print("处理业务逻辑 20: 运营商服务、国家/地区和省份管理。")
@@ -599,8 +623,7 @@ if __name__ == '__main__':
                 print(payouts_df.head())
             elif number == 23:
                 print("处理业务逻辑 23: 订阅合同所需权限管理。")
-                contracts_df = read_own_subscription_contracts.subscription_contracts_to_dataframe()
-                print(contracts_df.head())
+
                 # Example data to create a new subscription contract
                 contract_data = {
                     'name': 'New Subscription Contract',
@@ -623,12 +646,12 @@ if __name__ == '__main__':
                                                                                                  updated_contract_data)
                 print('Updated Subscription Contract:', updated_contract)
 
+                contracts_df = read_own_subscription_contracts.subscription_contracts_to_dataframe()
+                print(contracts_df.head())
+
+
             elif number == 24:
                 print("处理业务逻辑 24: 返回对象管理。")
-
-                returns_df = read_returns.returns_to_dataframe()
-
-                print(returns_df.head())
 
                 # Example data to create a new return
                 return_data = {
@@ -656,12 +679,13 @@ if __name__ == '__main__':
 
                 updated_return = write_returns.update_return(return_id, updated_return_data)
                 print('Updated Return:', updated_return)
+
+                returns_df = read_returns.returns_to_dataframe()
+
+                print(returns_df.head())
+
             elif number == 25:
                 print("处理业务逻辑 25: 资产和主题管理。")
-
-                themes_df = read_themes.themes_to_dataframe()
-
-                print(themes_df.head())
 
                 # Example data to create a new theme
                 theme_data = {
@@ -682,13 +706,12 @@ if __name__ == '__main__':
 
                 updated_theme = write_themes.update_theme(theme_id, updated_theme_data)
                 print('Updated Theme:', updated_theme)
+                themes_df = read_themes.themes_to_dataframe()
+
+                print(themes_df.head())
+
             elif number == 26:
                 print("处理业务逻辑 26: GraphQL Admin API 可翻译对象管理。")
-
-                translations_df = read_translations.translations_to_dataframe()
-
-                print(translations_df.head())
-
                 # Example data to create a new translation
                 translation_data = {
                     'key': 'example_key',
@@ -709,11 +732,14 @@ if __name__ == '__main__':
 
                 updated_translation = write_translations.update_translation(translation_id, updated_translation_data)
                 print('Updated Translation:', updated_translation)
+
+                translations_df = read_translations.translations_to_dataframe()
+
+                print(translations_df.head())
+
+
             elif number == 27:
                 print("处理业务逻辑 27: 配送订单资源分配给由任何配送服务管理的位置。")
-                orders_df = read_third_party_fulfillment_orders.third_party_fulfillment_orders_to_dataframe()
-                print(orders_df.head())
-
                 # Example data to create a new third-party fulfillment order
                 order_data = {
                     'order_id': 1234567890,
@@ -741,15 +767,16 @@ if __name__ == '__main__':
                 updated_order = write_third_party_fulfillment_orders.update_third_party_fulfillment_order(order_id,
                                                                                                           updated_order_data)
                 print('Updated Third-Party Fulfillment Order:', updated_order)
+                orders_df = read_third_party_fulfillment_orders.third_party_fulfillment_orders_to_dataframe()
+                print(orders_df.head())
+
+
             elif number == 28:
                 print("处理业务逻辑 28: 用户和员工购物加。")
                 users_df = read_users.users_to_dataframe()
                 print(users_df.head())
             elif number == 29:
                 print("处理业务逻辑 29: GraphQL Admin API OrderStaged 更改类型和订单编辑功能。")
-                order_edits_df = read_order_edits.order_edits_to_dataframe()
-                print(order_edits_df.head())
-
                 # Example data to create a new order edit
                 edit_data = {
                     'order_id': 1234567890,
@@ -786,6 +813,11 @@ if __name__ == '__main__':
 
                 updated_edit = write_order_edits.update_order_edit(edit_id, updated_edit_data)
                 print('Updated Order Edit:', updated_edit)
+
+                order_edits_df = read_order_edits.order_edits_to_dataframe()
+                print(order_edits_df.head())
+
+
             elif number == 30:
                 print("处理业务逻辑 30: 支付应用程序 API 付款应用程序配置。")
 
